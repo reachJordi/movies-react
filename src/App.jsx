@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import List from './components/List'
+import AnimeCarousel from './components/Carousel' 
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -35,7 +36,8 @@ function App() {
             )
           : (
             <div>
-                {<List data={movies.data} />}
+                <List data={movies.data} />
+                <AnimeCarousel animeData={movies.data} />
             </div>
             )}
     </>
