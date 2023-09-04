@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import List from './components/List'
 
 function App() {
-  const [loading, setLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [movies, setMovies] = useState({})
   
   // Runs on the first render
@@ -20,7 +20,7 @@ function App() {
         console.log(response)
         if (response) {
             setMovies(response)
-            setLoading(false)
+            setIsLoading(false)
         }
     }
 
@@ -29,13 +29,13 @@ function App() {
 
   return (
     <>
-    {loading
+    {isLoading
           ? (
             <span>Loading...</span>
             )
           : (
             <div>
-                {/**<List items={movies.data} />**/}
+                {<List data={movies.data} />}
             </div>
             )}
     </>
