@@ -36,7 +36,6 @@ function App() {
             )
           : (
             <div>
-                <List data={movies.data} />
                 <AnimeCarousel animeData={movies.data} />
             </div>
             )}
