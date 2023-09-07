@@ -27,6 +27,16 @@ const AnimeCarousel = ({ animeData }) => {
         key={currentIndex}
         src={animeData[currentIndex].image}
       />}
+      <div key={animeData[currentIndex]._id} className="anime-card">
+        <h2>{animeData[currentIndex].title}</h2>
+        <p>Alternative Titles: {animeData[currentIndex].alternativeTitles.join(', ')}</p>
+        <p>Ranking: {animeData[currentIndex].ranking}</p>
+        <p>Genres: {animeData[currentIndex].genres.join(', ')}</p>
+        <p>Episodes: {animeData[currentIndex].episodes}</p>
+        <p>Status: {animeData[currentIndex].status}</p>
+        <p>Synopsis: {animeData[currentIndex].synopsis}</p>
+        <a href={animeData[currentIndex].link}>More Info</a>
+      </div>
       <div className="slide_direction">
         <div className="left" onClick={handlePrevious}>
           <svg
@@ -49,7 +59,7 @@ const AnimeCarousel = ({ animeData }) => {
           </svg>
         </div>
       </div>
-      <div className="indicator">
+      <div className="carousel-indicator">
         {animeData.map((_, index) => (
         <div
           key={index}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import List from './components/List'
-import AnimeCarousel from './components/Carousel' 
-
+import AnimeCarousel from './components/Carousel'
+import './App.css'
+import "./components/Carousel.css"
 function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [movies, setMovies] = useState({})
